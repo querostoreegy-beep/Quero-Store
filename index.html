@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Quero Store | منصة كيريو</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="status-message" class="status-msg"></div>
+
+    <div id="login-page">
+        <div class="login-card">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo" class="rounded-logo">
+            </div>
+            <h1 id="auth-title">تسجيل الدخول</h1>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="username" placeholder="اسم المستخدم">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="كلمة المرور">
+            </div>
+            <button id="auth-btn" class="main-btn">دخول</button>
+            <div class="auth-switch">
+                <p>ليس لديك حساب؟ <button type="button" id="switch-mode-btn" class="text-link-btn">أنشئ حساباً الآن</button></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="app-content" style="display:none;">
+        <header class="main-header">
+            <div id="new-menu-toggle-btn" style="cursor:pointer;">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="header-center">
+                <div>
+                    <img src="logo.png" style="width:30px; border-radius:50%;">
+                    <h2 class="gold-text" style="margin:0;">كيريو ستور</h2>
+                </div>
+            </div>
+            <div class="user-pill" id="user-pill-btn" style="cursor:pointer;">
+                <span id="display-name" style="color:#0f172a; font-weight:bold;">...</span>
+                <span id="user-role-badge" style="font-size:9px; padding:2px 6px; border-radius:20px; background:var(--gold); color:#0f172a;"></span>
+                <i class="fas fa-user-circle" style="color:var(--gold);"></i>
+            </div>
+        </header>
+
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <img src="logo.png" style="width:35px; border-radius:50%;">
+                    <span>كيريو ستور</span>
+                </div>
+                <i class="fas fa-times" id="close-sidebar" style="cursor:pointer; color:var(--gold);"></i>
+            </div>
+            <ul>
+                <li class="nav-item" data-page="dashboard"><i class="fas fa-home"></i> الرئيسية</li>
+                <li class="nav-item" data-page="videos"><i class="fas fa-play-circle"></i> الفيديوهات</li>
+                <li class="nav-item" data-page="chapters"><i class="fas fa-book-open"></i> الفصول (1-42)</li>
+                <li class="nav-item" data-page="final_reviews"><i class="fas fa-graduation-cap"></i> المراجعات النهائية</li>
+                <li class="nav-item" data-page="files"><i class="fas fa-file-pdf"></i> ملفات الشرح</li>
+                <li class="nav-item" data-page="upgrade"><i class="fas fa-crown gold"></i> الاشتراك</li>
+                <li class="nav-item" data-page="account"><i class="fas fa-user-shield"></i> حسابي</li>
+                <li class="nav-item admin-only" data-page="admin" style="display:none;"><i class="fas fa-tachometer-alt"></i> لوحة التحكم</li>
+                <li class="nav-item" data-page="services"><i class="fas fa-star-of-life gold"></i> خدماتنا</li>
+                <li class="nav-item" data-page="support"><i class="fas fa-headset"></i> الدعم الفني</li>
+                <li id="logout-btn-action" style="color:#ff4d4d; cursor:pointer; padding:12px; display:flex; align-items:center; gap:10px;">
+                    <i class="fas fa-sign-out-alt"></i> خروج
+                </li>
+            </ul>
+        </nav>
+
+        <main id="main-content" class="container"></main>
+    </div>
+
+    <div id="sidebar-overlay" class="overlay"></div>
+
+    <div id="user-info-bar" class="user-info-bar" style="display:none;">
+        <div>
+            <i class="fas fa-user-circle"></i>
+            <span class="user-name" id="mobile-user-name">...</span>
+            <span class="user-role" id="mobile-user-role"></span>
+        </div>
+        <i class="fas fa-chevron-left" id="mobile-account-btn" style="cursor:pointer;"></i>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
